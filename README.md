@@ -11,3 +11,8 @@ Iniciei o servidor de desenvolvimento Django usando o comando
 python manage.py runserver.
 Acesso ao Site Localmente:
 Acessei o site localmente no meu navegador através do endereço http://127.0.0.1:8000/.
+
+https://www.joaobioco.com/crud-app-instalacao-do-django/
+https://www.joaobioco.com/instalacao-da-aplicacao-e-criacao-do-modelo/
+https://www.joaobioco.com/crud-app-views-urls-e-templates/
+https://www.joaobioco.com/crud-app-forms/
