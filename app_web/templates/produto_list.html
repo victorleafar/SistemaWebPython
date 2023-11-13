@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}
+Lista de produto
+{% endblock %}
+{% block content %}
+<div class="card-body">
+    <h4 class="text-center mb-4">Lista de produto</h4>    
+    <div class="d-grid gap-2">
+        <a type="button" class="btn btn-success mx-auto" href="{%url 'produto_create' %}">Crear novo produto</a>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" colspan>Descrição</th>
+                    <th scope="col" colspan="1">Preço</th>
+                    <th scope="col" colspan="1">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in produtos %}
+                <tr>
+                    <td class="col-xs-8 col-sm-8 col-md-8 col-lg-8">{{ item.descricao }}</td>
+                    <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2">{{ item.preco }}</td>
+                    <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <a type="button" class="btn btn-warning rounded-pill" href="{% url 'produto_update' item.id %}">Atualizar</a>
+                        <a type="button" class="btn btn-danger rounded-pill" href="{% url 'produto_delete' item.id %}">Deletar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagination mx-auto">
+            <span class="step-links">
+                {% if produtos.has_previous %}
+                    <a class="btn btn-outline-primary" href="?page=1">&laquo; Primeira</a>
+                    <a class="btn btn-outline-primary" href="?page={{ produtos.previous_page_number }}">Anterior</a>
+                {% endif %}
+
+                <span class="current">
+                    Página {{ produtos.number }} de {{ produtos.paginator.num_pages }}.
+                </span>
+
+                {% if produtos.has_next %}
+                    <a class="btn btn-outline-primary" href="?page={{ produtos.next_page_number }}">Próxima</a>
+                    <a class="btn btn-outline-primary" href="?page={{ produtos.paginator.num_pages }}">Última &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div> 
+</div>
+{% endblock %}

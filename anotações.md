@@ -1,8 +1,9 @@
 oque precisamos ter no projeto
 interface admin (ok)
 migrations (ok)
+model. ok
+view e template
 rotas 
-model. view e template
 
 #ESTRUTURA PADRÃO UTILIZADA PELO DJANGO (MODELS, VIEWS, TEMPLATES)
 
@@ -36,3 +37,5 @@ django-admin startproject crud
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
+
+https://adiramadhan17.medium.com/django-crud-with-forms-and-bootstrap-template-73af33d8f016
